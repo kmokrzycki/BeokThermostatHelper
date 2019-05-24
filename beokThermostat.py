@@ -13,7 +13,10 @@ idleTime = 5
 strHost = '192.168.0.90' #ip device
 strMac = '78:0F:77:FA:85:8A' #mac device
 
-db = sqlite3.connect( '/home/krzysiek/BeokPy/data/beok.db')
+
+dbPath = '%s/data/beok.db' % Path().absolute();
+
+db = sqlite3.connect(dbPath)
 
 cursor = db.cursor()
 cursor.execute('''
