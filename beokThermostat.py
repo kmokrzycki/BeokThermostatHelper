@@ -14,7 +14,7 @@ strHost = '192.168.0.90' #ip device
 strMac = '78:0F:77:FA:85:8A' #mac device
 
 
-dbPath = '%s/data/beok.db' % Path().absolute();
+dbPath = '%s/data/beok.db' % Path(__file__).parent.absolute();
 
 db = sqlite3.connect(dbPath)
 
