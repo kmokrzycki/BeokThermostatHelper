@@ -1,18 +1,17 @@
 # BeokThermostatHelper
 
-I created this scrpt as as was annoyed how BeOk BOT-313W Thermostat and similar models are handling temperature.
+I created this scrpt as I was annoyed how BeOk BOT-313W Thermostat and similar models are handling temperature.
 
 It only has accuracy down to ±0.5℃. What it means in practice is:
 
-When yuo set temperature to be: 20℃ it will tunr itself on only when room temperature drops to 19℃ and keep heating on until it is 21℃. With where in my house were it reaches 21℃ making temperature diference 2℃ between on and off, even more radiators are still hot when it reachins 21℃ so it will effectively now heat up to 22℃.
+When yuo set temperature to be: 20℃ it will turn itself ON only when room temperature drops to 19℃ and keep heating on until it is 21℃. Where in my house it reaches 21℃ making temperature diference 2℃ between ON and OFF state, even more radiators are still hot when it reaches 21℃ so it will effectively now heat up to 22℃.
 
-This script limits will turn heating on when it is 19.5℃ and turn heating off when it is 20℃ (even with hot radiators it should it never exceeds 21℃)
+This script will turn heating on when it is 19.5℃ and turn heating off when it is 20℃ (even with hot radiators it should never exceeds 21℃)
 
 ## How it works
-Once you have your thermostat ON and set temperature is less than require it will add 1.5℃ to current desired for 10 seconds only.
-This will trigger heating to turn ON and wait until it reaches desired temperature and turn it OFF.
+Once you have your thermostat active if room temperature is less than desired it will add 1.5℃ to current desired for 10 seconds only, this is enought to trigger heating to turn ON and wait until it reaches desired temperature before turning it OFF again doins same action removing 1.5℃ for 10 seconds enought for the thermostat to realis it should switch heating OFF.
 
-There is a delay to prevent flicking switch ON/OFF too often so script waits for 2 minutes before it will switch ON to OFF or otherwise.
+There is also a delay to prevent flicking switch ON/OFF too often so script waits for 2 minutes after any ON/OFF action before it will try to switch ON/OFF again.
 
 ## Compatibility (should work with)
 * BeOk BOT-313W
@@ -21,7 +20,7 @@ There is a delay to prevent flicking switch ON/OFF too often so script waits for
 
 ## Configuration
 
-Before you can run the script you need to configure the thermostat ip + mac in main file `beokThermostat.py`
+Before you can run the script, you need to configure the thermostat ip + mac in main file `beokThermostat.py`
 
 ```
 # set this variables
